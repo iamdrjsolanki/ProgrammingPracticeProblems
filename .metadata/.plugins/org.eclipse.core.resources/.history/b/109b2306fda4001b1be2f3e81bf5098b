@@ -9,6 +9,8 @@ public class User implements Runnable {
 	private List<Transactions> transactions;
 	private BankingServices service;
 	
+	private final Object obj = new Object();
+	
 	public User(int userId, String userName, List<Transactions> transactions, BankingServices service) {
 		super();
 		this.userId = userId;
@@ -43,11 +45,13 @@ public class User implements Runnable {
 	
 	@Override
 	public void run() {
-		System.out.println("Calling Thread: " + Thread.currentThread().getName());
-		for(Transactions transaction : this.transactions) {
-			System.out.println("Transacting: "+transaction.toString());
-			this.service.transfer(transaction.getFrom(), transaction.getTo(), transaction.getAmount());
-		}
+		//synchronized (obj) {
+			System.out.println("Calling Thread: " + Thread.currentThread().getName());
+			for(Transactions transaction : this.transactions) {
+				System.out.println("Transacting: "+transaction.toString());
+				this.service.transfer(transaction.getFrom(), transaction.getTo(), transaction.getAmount());
+			}
+		//}
 	}
 
 	@Override

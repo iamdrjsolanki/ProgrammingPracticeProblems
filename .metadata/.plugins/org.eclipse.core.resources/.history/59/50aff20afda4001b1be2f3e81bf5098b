@@ -9,6 +9,8 @@ public class User implements Runnable {
 	private List<Transactions> transactions;
 	private BankingServices service;
 	
+	private final Object obj = new Object();
+	
 	public User(int userId, String userName, List<Transactions> transactions, BankingServices service) {
 		super();
 		this.userId = userId;

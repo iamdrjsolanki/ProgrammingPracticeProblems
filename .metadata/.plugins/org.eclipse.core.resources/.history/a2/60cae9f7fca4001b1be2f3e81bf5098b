@@ -17,6 +17,7 @@ public class BankingServices {
 		synchronized (fromLock) {
 			try {
 				System.out.println("Acquired lock by thread in transfer method: " + Thread.currentThread().getName());
+				//Thread.sleep(2000);
 				if(from.getBalance() >= amt) {
 					from.withdraw(amt);
 					synchronized (toLock) {
