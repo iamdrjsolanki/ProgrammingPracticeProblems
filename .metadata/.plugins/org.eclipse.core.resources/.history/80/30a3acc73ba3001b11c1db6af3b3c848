@@ -1,0 +1,19 @@
+package com.practice.bankingServices;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class BankingServices {
+	
+	public static List<Account> account;
+	
+	static {
+		account = new ArrayList<Account>();
+		for(int i=0; i<6; i++) {
+			account.add(new Account("Account"+i, 1000));
+		}
+	}
+	
+	public static void transfer(Account from, Account to, long amt) {}
+
+}

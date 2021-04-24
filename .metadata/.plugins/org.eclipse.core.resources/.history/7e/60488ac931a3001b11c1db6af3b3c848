@@ -1,0 +1,24 @@
+package com.practice.bankingServices;
+
+public class Account {
+	
+	private long balance;
+	
+	public Account(long balance) {
+		super();
+		this.balance = balance;
+	}
+	
+	public long getBalance() {
+		return balance;
+	}
+	
+	public void deposit(long amt) {
+		this.balance += amt;
+	}
+	
+	public void withdraw(long amt) {
+		this.balance -= amt;
+	}
+
+}

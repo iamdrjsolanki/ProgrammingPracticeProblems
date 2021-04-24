@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.practice.bankingServices.Transact"/>
+    <fullyQualifiedTypeName name="com.practice.bankingServices.Transactions"/>
+    <fullyQualifiedTypeName name="java.util.concurrent.locks.ReentrantLock"/>
+    <fullyQualifiedTypeName name="com.practice.bankingServices.BankingServices"/>
+    <fullyQualifiedTypeName name="com.practice.bankingServices.Account"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+</qualifiedTypeNameHistroy>

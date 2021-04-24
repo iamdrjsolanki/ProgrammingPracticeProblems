@@ -1,0 +1,36 @@
+package com.practice.bankingServices;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Transact {
+
+	public static void main(String[] args) {
+		
+		List<Transactions> list = new ArrayList<>();
+		
+		list.add(new Transactions(BankingServices.account.get(0), BankingServices.account.get(1), 100));
+		list.add(new Transactions(BankingServices.account.get(1), BankingServices.account.get(2), 100));
+		User user1 = new User(1, "User1", list);
+		list.clear();
+		
+		list.add(new Transactions(BankingServices.account.get(0), BankingServices.account.get(1), 100));
+		list.add(new Transactions(BankingServices.account.get(1), BankingServices.account.get(0), 100));
+		User user2 = new User(2, "User2", list);
+		list.clear();
+		
+		list.add(new Transactions(BankingServices.account.get(3), BankingServices.account.get(4), 100));
+		list.add(new Transactions(BankingServices.account.get(5), BankingServices.account.get(5), 100));
+		list.add(new Transactions(BankingServices.account.get(5), BankingServices.account.get(1), 100));
+		User user3 = new User(3, "User3", list);
+		list.clear();
+		
+		Thread t1 = new Thread(user1);
+		Thread t2 = new Thread(user2);
+		Thread t3 = new Thread(user3);
+		
+		t1.start(); t2.start(); t3.start();
+		
+	}
+
+}

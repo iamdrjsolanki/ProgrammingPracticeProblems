@@ -1,0 +1,42 @@
+package com.practice.bankingServices;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class BankingServices {
+	
+	public static List<Account> account;
+	
+	static {
+		account = new ArrayList<Account>();
+		for(int i=0; i<6; i++) {
+			account.add(new Account("Account"+i, 1000));
+		}
+	}
+	
+	public void transfer(Account from, Account to, long amt) {
+		System.out.println("Into transfer method");
+		while(true) {
+			System.out.println("Attempt to acquire lock by thread: " + Thread.currentThread().getName());
+			if(from.lockObject.tryLock() && to.lockObject.tryLock()) {
+				try {
+					System.out.println("Acquired lock by thread: " + Thread.currentThread().getName());
+					Thread.sleep(10000);
+					if(from.getBalance() >= amt) {
+						from.withdraw(amt);
+						to.deposit(amt);
+					} else {
+						System.out.println("Not enough balance to transfer.");
+						return;
+					}
+				} catch(Exception e) {
+					e.printStackTrace();
+				} finally {
+					from.lockObject.unlock();
+					to.lockObject.unlock();
+				}
+			}
+		}
+	}
+
+}

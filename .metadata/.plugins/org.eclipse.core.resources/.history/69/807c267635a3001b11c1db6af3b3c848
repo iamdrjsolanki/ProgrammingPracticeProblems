@@ -1,0 +1,27 @@
+package com.practice.bankingServices;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Transact {
+
+	public static void main(String[] args) {
+//		BankingServices service1 = new BankingServices();
+//		BankingServices service2 = new BankingServices();
+//		BankingServices service3 = new BankingServices();
+//		BankingServices service4 = new BankingServices();
+//		BankingServices service5 = new BankingServices();
+//		BankingServices service6 = new BankingServices();
+		
+		List<Thread> threads = new ArrayList<Thread>();
+		
+		for(User user : BankingServices.user) {
+			threads.add(new Thread(user));
+		}
+		
+		for(Thread t : threads) {
+			t.start();
+		}
+	}
+
+}

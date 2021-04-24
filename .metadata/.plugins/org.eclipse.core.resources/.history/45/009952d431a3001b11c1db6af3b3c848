@@ -1,0 +1,26 @@
+package com.practice.bankingServices;
+
+public class Account {
+	
+	private String accountId;
+	private long balance;
+	
+	public Account(String accountId, long balance) {
+		super();
+		this.accountId = accountId;
+		this.balance = balance;
+	}
+	
+	public long getBalance() {
+		return balance;
+	}
+	
+	public void deposit(long amt) {
+		this.balance += amt;
+	}
+	
+	public void withdraw(long amt) {
+		this.balance -= amt;
+	}
+
+}
