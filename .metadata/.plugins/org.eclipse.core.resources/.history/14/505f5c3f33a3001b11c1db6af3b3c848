@@ -1,9 +1,0 @@
-package com.practice.bankingServices;
-
-public class Transact {
-
-	public static void main(String[] args) {
-		BankingServices service = new BankingServices();
-	}
-
-}

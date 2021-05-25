@@ -1,0 +1,25 @@
+package com.practice.datastructures;
+
+import com.practice.datastructures.PracticeLinkedList.Node;
+
+public class MergeAndSortLinkedList {
+	
+	Node mergeAndSortSortedLinkedList(Node h1, Node h2) {
+		return null;
+	}
+
+	public static void main(String[] args) {
+		
+		PracticeLinkedList list1 = new PracticeLinkedList();
+		list1.add(1); list1.add(3); list1.add(5); list1.add(7);
+		System.out.println("Size of list 1:"+list1.size());
+		list1.printLinkedList();
+		
+		PracticeLinkedList list2 = new PracticeLinkedList();
+		list2.add(1); list2.add(3); list2.add(5); list2.add(7);
+		System.out.println("Size of list 2:"+list2.size());
+		list2.printLinkedList();
+		
+	}
+
+}
