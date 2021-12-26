@@ -1,7 +1,8 @@
 package com.practice.problems;
 
 public class PeakEle {
-
+	
+	//find the highest peak element in the array
 	public static void main(String[] args) {
 		int arr[] = { 100, 180, 260, 310, 40, 535, 695 };
 		System.out.print(peakEle(arr));

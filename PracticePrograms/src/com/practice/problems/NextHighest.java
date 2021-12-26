@@ -1,6 +1,6 @@
 package com.practice.problems;
 
-public class HCLTest {
+public class NextHighest {
 
 	public static void main(String[] args) {
 		//Find out next highest element from given index.
