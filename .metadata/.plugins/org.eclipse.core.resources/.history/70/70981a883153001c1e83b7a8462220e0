@@ -1,0 +1,10 @@
+package com.practice.problems;
+
+public class PeakEle {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

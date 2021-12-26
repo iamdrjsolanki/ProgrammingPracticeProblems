@@ -1,0 +1,70 @@
+package com.practice.problems;
+
+interface A {
+	void m();
+	default void defaultMethod() {
+		System.out.println("Default Method in Interface.");
+	}
+	
+	static void staticMethod() {
+		System.out.println("Static Method in interface.");
+	}
+}
+
+interface B {
+	void m();
+}
+
+interface C {
+	void m();
+}
+
+public class InterfaceTest implements A, B, C {
+	
+	public void m() {
+		System.out.println("Hi");
+	}
+	
+	/* Cannot override static method of Interface
+	 * @Override static void staticMethod() {
+	 * System.out.println("Static method trying to override."); }
+	 */
+	
+	public static void main(String a[]) {
+		InterfaceTest it = new InterfaceTest();
+		it.m();
+		//InterfaceTest.staticMethod();
+	}
+}
+
+
+@FunctionalInterface
+interface A1 {
+	void a1();
+	default int a2() {return 1;}
+	static int a3() {return 1;}
+}
+
+@FunctionalInterface
+interface B1 {
+	void b1();
+	default int b2() {return 2;}
+	static int b3() {return 2;}
+}
+
+class FuncInterfaceTest implements A1, B1 {
+
+	@Override
+	public void b1() {
+		System.out.println("b1");
+	}
+
+	@Override
+	public void a1() {
+		System.out.println("a1");
+	}
+	
+	A1 ft = new FuncInterfaceTest();
+	ft.a1();
+	
+}

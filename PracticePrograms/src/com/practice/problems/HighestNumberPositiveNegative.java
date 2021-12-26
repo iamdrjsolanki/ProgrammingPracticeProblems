@@ -16,7 +16,7 @@ public class HighestNumberPositiveNegative {
 		int max = Integer.MIN_VALUE;
 		for(int i=0; i<numbers.size(); i++) {
 			int curr = numbers.get(i);
-			if(curr > 0) {
+			if(curr > 0 && curr > max) {
 				int currOpp = curr + (curr * -2);
 				System.out.println("curr:"+curr+" currOpp:"+currOpp);
 				if(numbers.contains(currOpp)) {

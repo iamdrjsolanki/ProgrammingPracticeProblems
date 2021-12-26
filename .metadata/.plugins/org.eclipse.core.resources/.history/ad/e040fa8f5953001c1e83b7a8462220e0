@@ -1,0 +1,29 @@
+package com.practice.problems;
+
+@FunctionalInterface
+interface A1 {
+	void a1();
+	default int a2() {return 1;}
+	static int a3() {return 1;}
+}
+
+@FunctionalInterface
+interface B1 {
+	void a1();
+	//default int a2() {return 2;}
+	static int a3() {return 2;}
+}
+
+public class FuncInterfaceTest implements A1, B1 {
+	
+	@Override
+	public void a1() {
+		System.out.println("a1");
+	}
+	
+	public static void main(String a[]) {
+		FuncInterfaceTest ft = new FuncInterfaceTest();
+		ft.a1();
+	}
+	
+}
