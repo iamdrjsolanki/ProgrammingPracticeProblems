@@ -5,9 +5,9 @@ import java.util.Map;
 
 //input Array : {-40, -5, 1, 3, 6, 7, 8, 20}
 //sum = 15
+//Print numbers to which by adding them we get the output as sum.
 
-
-public class TestClass {
+public class PrintNumbersForSum {
 
 	public static void main(String[] args) {
 			int[] arr = {-40, -5, 1, 3, 6, 7, 8, 20};

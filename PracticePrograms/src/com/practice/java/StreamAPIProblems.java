@@ -1,7 +1,9 @@
 package com.practice.java;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -16,6 +18,7 @@ public class StreamAPIProblems {
         productsList.add(new Product(3,"Lenevo Laptop",28000));  
         productsList.add(new Product(4,"Sony Laptop",28000));  
         productsList.add(new Product(5,"Apple Laptop",90000));
+        //productsList.add(new Product(2,"Dell Laptop",30000)); 
         
         List<String> stringList = new ArrayList<String>(10);
         stringList.add("HP Laptop");  
@@ -72,7 +75,8 @@ public class StreamAPIProblems {
 		System.out.println(productsList.stream().collect(Collectors.toSet()));
 		
 		//Convert List into Map -> if the key is same it will throw an error saying duplicate key in map
-		System.out.println(productsList.stream().collect(Collectors.toMap(p -> p.id, p -> p.name)));	
+		System.out.println(productsList.stream().collect(Collectors.toMap(p -> p.id, p -> p.name)));
+		//System.out.println(productsList.stream().collect(Collectors.toMap(p -> p.id, p -> p.name, (p.id, p1.id) -> p1.id)));	
 		
 		//Average of price
 		System.out.println(productsList.stream().collect(Collectors.averagingDouble(p -> p.price)));
@@ -101,6 +105,18 @@ public class StreamAPIProblems {
 		System.out.println();
 		//remove empty elements from the list
 		System.out.println(stringList.stream().filter(x -> x==null).collect(Collectors.toList()).size());
+		
+		//Grouping
+		List<String> words = Arrays.asList("The", "Welcome", "the", "to", "the", "too", "java", "the", "together", "world");
+		System.out.println(words.stream().collect(Collectors.groupingBy(x -> x, Collectors.counting())));
+		System.out.println(words.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting())));
+		
+		//findFirst
+		System.out.println(words.stream().filter(x -> x.contains("to")).findFirst().get());
+		
+		//findAny
+		System.out.println(words.stream().filter(x -> x.contains("to")).findAny().get());
+		System.out.println(words.stream().parallel().filter(x -> x.contains("to")).findAny().get());
 		
 	}
 
